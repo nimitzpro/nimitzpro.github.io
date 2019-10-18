@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.290236b1.chunk.css",
+    "main.css": "/static/css/main.3cce2a68.chunk.css",
     "main.js": "/static/js/main.26f59b2f.chunk.js",
     "main.js.map": "/static/js/main.26f59b2f.chunk.js.map",
     "runtime~main.js": "/static/js/runtime~main.17160a0a.js",
@@ -8,9 +8,9 @@
     "static/js/2.158f5866.chunk.js": "/static/js/2.158f5866.chunk.js",
     "static/js/2.158f5866.chunk.js.map": "/static/js/2.158f5866.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.ebdb13cb6546884f72d5abe0f7e01603.js": "/precache-manifest.ebdb13cb6546884f72d5abe0f7e01603.js",
+    "precache-manifest.ffafba444bb96bc7465cf861f435b7e5.js": "/precache-manifest.ffafba444bb96bc7465cf861f435b7e5.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.290236b1.chunk.css.map": "/static/css/main.290236b1.chunk.css.map",
+    "static/css/main.3cce2a68.chunk.css.map": "/static/css/main.3cce2a68.chunk.css.map",
     "static/media/bg.jpg": "/static/media/bg.24de3949.jpg",
     "static/media/facebook.svg": "/static/media/facebook.c0cd1382.svg",
     "static/media/github.svg": "/static/media/github.8f8edc5f.svg",
