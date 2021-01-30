@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nimitzpro's site</title>
+    <style>
+        *{margin:0 0; padding:0 0;}
+        canvas{
+            position:fixed;
+            z-index:-1;
+            overflow:hidden;
+        }
+        main{
+            position:relative;
+            color:lightgray;
+        }
+        #header{
+            position: relative;
+            text-align:center;
+            background-color:rgba(0,0,0,0.4);
+            width:fit-content;
+            padding:0.5em;
+            border-radius: 1em 1em;
+        }
+        header{
+            width:fit-content;
+            height: 100vh;
+            margin:0 auto;
+            /* background-color: #fff; */
+            display:flex;
+            flex-wrap:wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        section{
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="textcanvas" height="100" width="100"></canvas>
+    <!-- <canvas id="codecanvas" height="100" width="100"></canvas>
+    <canvas id="musiccanvas" height="100" width="100"></canvas> -->
+    <main>
+        <header>
+            <h1 id="header"></h1>
+        </header>
+        <hr />
+        <section>
+            <div id="github"></div>
+        </section>
+        <hr />
+        <section>
+            <div id="github"></div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

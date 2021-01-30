@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexander Stradnic</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function classToggle() {
+        document.querySelector('#hidden').style.display = document.querySelector('#hidden').style.display == "block" ? "none" : "block";
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+        <h3>                    
+        <ul>
+            <li><a id="icon" href="#intro">Home</a></li>
+            <li><button id="button" onClick="classToggle()"><img id="navicon" src="./assets/navicon.png" alt="" /></button></li>
+            <span id = "hidden">     
+            <li><a href="#about">About me</a></li>
+            <li><a href="#experience">Experience/Projects</a></li>
+            <li><a href="#awards">Skills/Awards</a></li>      
+            <li><a href="#education">Education</a></li>      
+            <li><a href="#contacts">Contacts</a></li>   </span>
+        </ul>
+        </h3>
+        </nav>
+    </header>
+
+    <main>
+        <section id="intro">
+            <h1>My name is Alexander Stradnic. Welcome to my website.</h1>
+        </section>
+        <section id="about">
+            <h2>About me</h2>
+            <p>I started studying Computer Science at UCC in 2019, and am proficient in computer programming/I.T.
+                I have built my own computer and ran various distributions of Linux, namely Ubuntu, Kali, Manjaro, and currently run Arch alongside Windows 10.
+                I am also a musician, studying piano and guitar part-time at CIT Cork School of Music.
+                <br/>I have experience with: </p>
+                <ul>
+                <li>- O.O.P. and web development(front and back end)</li>
+                <li>- Performing piano and guitar and editing music with FL Studio, Audacity</li>
+                <li>- Media editing using Adobe Photoshop, Illustrator, Paint.net, Inkscape</li>
+                <li>- Video editing/animation using Adobe Premiere Pro, After Effects</li>
+                </ul>
+            </ul>
+            <p>In my spare time I also enjoy history, astronomy, languages, Aikido, and tennis.</p>
+        </section>
+        <section id="experience">
+          <h2>Experience</h2>
+          <h4>IBM Cork, Work Experience</h4>
+          <p>I worked for a week(6th - 10th Jan.) with a team at IBM, solving issues with the frontend(React) of a product being developed. 
+          </p>
+
+          <h2 id="h22">Volunteer Experience</h2>
+          <h4>CoderDojo, IBM Cork, 2016 - 2019</h4>
+          <p>Mentored HTML & CSS in 2016 on a one-to-one basis and currently helping mentor Games Development once a week at CoderDojo IBM, Cork.</p>
+          </section>
+          <section id="awards">
+          <div id="internal">
+          <h2>Skills</h2>
+          <p id="skillsp">I am proficient in : </p>
+          <ol>
+            <h5>
+            <li>HTML5 / CSS3 / JS (Responsive Web Design)</li>
+            <li>The MERN Stack - MongoDB, ExpressJS, ReactJS, Node.js</li>
+            <li>Python</li>
+            <li>Java</li>
+            <li>Learning C / C++, and possibly Golang</li>
+            </h5>
+          </ol>
+          </div>
+          <div id="internal">
+          <h2 id="h22">Awards</h2>
+          <h5>56th Place, All Ireland Linguistics Olympiad (AILO)</h5>
+          </div>
+          <div id="internal">
+          <h2 id="h22">Courses</h2>
+          <h5>Fundamentals of Computer Science by Michael O'Sullivan</h5>
+          <h5>120 Hour Advanced TEFL Qualification Certificate</h5>
+          <h5>10 Hour Advanced Certificate in TEFL Classroom Methodologies</h5>
+          </div>
+        </section>
+        <section id="education">
+          <h2>Education</h2>
+          <h4>UCC - BSc in Computer Science, 2019 - 2023</h4>
+          <p>Studying Computer Science at University College Cork
+          </p>
+          <h4>Ashton Comprehensive School, 2014 - 2019 </h4>
+          <p>I studied at Ashton Secondary School, and achieved the following 498 points in my Leaving Certificate 2019</p>
+          <h4>CIT Cork School of Music</h4>
+          <h5>Piano Grade 7<br/>2010 - 2019*</h5>
+          <p>Learned how to play the piano and can play many popular pieces such as :<br/>
+    Rondo Alla Turca - Mozart<br/>
+    Fur Elise, Sonata "Pathetique" Op. 13 - Beethoven<br/>
+    Kinderszenen Collection, Op. 15 - Schumann<br/>
+    Maple Leaf Rag - Joplin</p>
+          <p><em>*Grade 8 exam postponed to late 2020 due to CoVID-19.</em></p>
+          <h5>Classical Guitar Grade 7<br/>2012 - 2020</h5>
+          <p>
+    Learned different techniques and styles of classical guitar playing such as rasgueado, tasto, ponticello, staccato, and étoufée.
+    Learned various pieces by famous composers Giuliani, Tárrega, Sor, Aguado, Ferrer, etc.
+    </p>
+          <h5>Senior Cycle Musicianship<br/> 2014 - 2018</h5>
+          <p>In this course I built on my Junior Cycle knowledge and learned more advanced theory of music with an understanding for how harmonies and progressions are constructed. Also learned about the different eras of music, such as Baroque, Classical, Romantic, Impressionist and more and the different styles/characteristics of each era. </p>
+          </section>
+        <section id="contacts">
+        <h2>Contacts</h2>
+        <div id="flex-parent">
+        <div id="flex"><a href = "https://www.facebook.com/AlexStradnic"><img src="./assets/facebook.svg" id="ICON"/></a></div>
+          <div id="flex"><a href = "https://github.com/nimitzpro"><img src="./assets/github.svg" id="ICON"/></a></div>
+          <div id="flex"><a href = "https://www.linkedin.com/in/alexander-stradnic-737930124/"><img src="./assets/linkedin.svg" id="ICON"/></a></div>      
+          <div id="flex"><a href = "alexanderstradnic@gmail.com"><img src="./assets/gmail.svg" id="ICON"/></a></div>
+          <div id="flex"><a href = "https://www.youtube.com/channel/UCZlH6dDCDiMJCtd6x0mufeA?view_as=subscriber"><img src="./assets/youtube.svg" id="ICON"/></a></div>
+          </div>
+        </section>
+        <footer><h4>Alexander Stradnic 2020</h4></footer>
+        </main>
+</body>
+</html>
