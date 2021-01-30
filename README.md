@@ -1,3 +1,1 @@
-# My Portfolio
-
-http://nimitzpro.github.io
+# My new webpage, in development
