@@ -5,7 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>nimitzpro's site</title>
     <style>
-        *{margin:0 0; padding:0 0;}
+        *{
+            margin:0 0;
+            padding:0 0;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+        body{
+            font-size:16px;
+        }
         canvas{
             position:fixed;
             z-index:-1;
@@ -36,6 +43,46 @@
         section{
             height: 100vh;
         }
+        #wrapper{
+            display:flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        #wrapper div{
+            word-break: normal;
+            border: 1px solid white;
+            border-radius: 1em 1em;
+            padding: 1em;
+            margin:0.75em;
+            width: 10em;
+            height: 10em;
+            background-color: black;
+        }
+        #github a{
+            text-decoration: none;
+            color: white;
+        }
+        #github img{
+            display:inline-block;
+            height:4em;
+            width:auto;
+            border-radius:1em 1em;
+        }
+        #github h2{
+            display: inline-block;
+        }
+        #title{
+            margin:0.5em 3em;
+            padding:0.25em 1em;
+            width:fit-content;
+            border-radius: 0.5em 0.5em;
+            border: 1px solid white;
+            display:flex;
+            justify-content: flex-start;
+            align-items: center;
+            background-color:black;
+        }
     </style>
 </head>
 <body>
@@ -47,12 +94,11 @@
             <h1 id="header"></h1>
         </header>
         <hr />
-        <section>
-            <div id="github"></div>
+        <section id="github">
         </section>
         <hr />
         <section>
-            <div id="github"></div>
+            <!-- <div id="github">More things</div> -->
         </section>
     </main>
     <script src="script.js"></script>
