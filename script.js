@@ -76,7 +76,14 @@ function loop(){
     canvas.width = window.innerWidth;
     
     ctx.fillStyle = "black";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillRect(0, 0-window.scrollY, canvas.width, canvas.height);
+
+    
+    // ctx.fillStyle = "rgb(0,0,0)"; set bg colour for each section if wanted
+    ctx.fillRect(0, canvas.height - window.scrollY, canvas.width, canvas.height);
+
+    // ctx.fillStyle = "rgb(0,0,0)";
+    ctx.fillRect(0, canvas.height*2 - window.scrollY, canvas.width, canvas.height);
 
     // let pos;
     // if(window.innerHeight > window.scrollY){
@@ -97,7 +104,8 @@ function loop(){
             ctx.fillText(String.fromCodePoint(cdata[0][i].char[1]), cdata[0][i].x, cdata[0][i].y);
         }
         else{
-            ctx.fillText(String.fromCodePoint(cdata[0][i].char[2]), cdata[0][i].x, cdata[0][i].y)
+            ctx.fillStyle = "white";
+            ctx.fillText(String.fromCodePoint(cdata[0][i].char[2]), cdata[0][i].x, cdata[0][i].y);
             // ctx.fillText(String.fromCharCode(cdata[0][i].char[2]), cdata[0][i].x, cdata[0][i].y);
 
 
@@ -132,27 +140,17 @@ function loop(){
     for(let i = 0; i < cdata[1].length; i++){
         ctx.fillStyle = "rgba(153,255,153,0.5)";
         ctx.font = "10px courier";
-        // switch(current){
-        //     case 1:
-        //         ctx.fillText(String.fromCharCode(cdata[1][i].char[1]), cdata[1][i].x, cdata[1][i].y);
-        //         break;
-        //     case 2:
-        //         ctx.fillText(String.fromCharCode(cdata[1][i].char[1]), cdata[1][i].x, cdata[1][i].y);
-        //         break;
-        //     default:
-        //         ctx.fillText(String.fromCharCode(cdata[1][i].char[0]), cdata[1][i].x, cdata[1][i].y);
-        //         break;
-        // }
-        // ctx.fillText(String.fromCharCode(cdata[1][i].char), cdata[1][i].x, cdata[1][i].y);
-        // ctx.fillText(i+1, letters[i].x, letters[i].y + 30 + (i % 2 === 0 ? 10 : 0));
-        
+
         if((cdata[1][i].y+window.scrollY) / window.innerHeight <= 1){
+            // ctx.fillStyle = "rgba(153,255,153,0.5)";
             ctx.fillText(String.fromCodePoint(cdata[1][i].char[0]), cdata[1][i].x, cdata[1][i].y);
         }
         else if((cdata[1][i].y+window.scrollY) / window.innerHeight > 1 && (cdata[1][i].y+window.scrollY) / window.innerHeight <= 2){
+            // ctx.fillStyle = "rgba(153,255,153,0.5)";
             ctx.fillText(String.fromCodePoint(cdata[1][i].char[1]), cdata[1][i].x, cdata[1][i].y);
         }
         else{
+            ctx.fillStyle = "rgba(255,255,255,0.5)";
             ctx.fillText(String.fromCodePoint(cdata[1][i].char[2]), cdata[1][i].x, cdata[1][i].y);
         }
 
