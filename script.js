@@ -4,21 +4,30 @@ let music_symbols = [[119070, 119073, 119074, 119099, 119100, 119101, 119102], [
 
 let colors = ["0,255,0","127,127,255","255,255,255"];
 
+let lang_colors = {"JavaScript":"yellow", "Python":"blue", "Go":"lightblue", "Shell":"lightgreen", "HTML":"red", "Java":"orange"};
 
 let canvas = document.querySelector("canvas");
 let ctx;
 let cdata = [];
 cdata[0] = [];
 cdata[1] = [];
- 
+
 let interval;
 
+let sectionHeights;
+function getHeights(){
+    sectionHeights = [document.querySelector("header").clientHeight, document.querySelectorAll("section")[0].clientHeight, document.querySelectorAll("section")[1].clientHeight];
+}
 
 function init(){
-    ctx = canvas.getContext('2d');
+    getHeights();
 
+    document.addEventListener('resize', refreshChars);
+
+    ctx = canvas.getContext('2d');
+    
     canvas.height = window.innerHeight;
-    canvas.width = window.innerWidth;
+    canvas.width = window.innerWidth >= 720 ? window.innerWidth : 1080;
     ctx.fillStyle = "black";
     ctx.fillRect(0,0, canvas.width, canvas.height);
 
@@ -37,6 +46,14 @@ function init(){
     }
 }
 
+function refreshChars(){
+    for(let list of cdata){
+        for(char of list){
+            char = genCharObject(genSymbols());
+        }
+    }
+}
+
 function genSymbols(){
     return [Math.random() > 0.2 ? Math.random() > 0.4 ? Math.floor(33 + Math.random()*94) : Math.floor(921 + Math.random()*48) : Math.floor(12353 + Math.random()*179), Math.random() > 0.5 ? 49 : 48, Math.random() > 0.25 ? music_symbols[1][Math.floor(Math.random()*music_symbols[1].length)] : music_symbols[0][Math.floor(Math.random()*music_symbols[0].length)]];
 }
@@ -46,19 +63,21 @@ function genCharObject(char){
 }
 
 function loop(){
+    getHeights();
+
     canvas.height = window.innerHeight;
     canvas.width = window.innerWidth;
     
     ctx.fillStyle = "black";
-    ctx.fillRect(0, 0-window.scrollY, canvas.width, canvas.height);
+    ctx.fillRect(0, 0-window.scrollY, canvas.width, sectionHeights[0]);
 
     
-    // ctx.fillStyle = "rgb(0,0,0)"; set bg colour for each section if wanted
-    ctx.fillRect(0, canvas.height - window.scrollY, canvas.width, canvas.height);
+    // ctx.fillStyle = "rgb(0,222,0)"; // set bg colour for each section if wanted
+    ctx.fillRect(0, sectionHeights[0] - window.scrollY, canvas.width, sectionHeights[1]);
 
-    // ctx.fillStyle = "rgb(0,0,0)";
-    ctx.fillRect(0, canvas.height*2 - window.scrollY, canvas.width, canvas.height);
-
+    // ctx.fillStyle = "rgb(0,0,222)";
+    ctx.fillRect(0, (sectionHeights[0] + sectionHeights[1])- window.scrollY, canvas.width, sectionHeights[2]);
+    
     handleCharacters();
     
 }
@@ -78,11 +97,11 @@ function handleCharacters(){
 function handleChar(char, large){
     let opacity = large ? "1.0" : "0.5";
 
-    if((char.y+window.scrollY) / window.innerHeight <= 1){
+    if((char.y+window.scrollY) / sectionHeights[0] <= 1){
         ctx.fillStyle = `rgba(${colors[0]}, ${opacity})`;
         ctx.fillText(String.fromCodePoint(char.char[0]), char.x, char.y);
     }
-    else if((char.y+window.scrollY) / window.innerHeight > 1 && (char.y+window.scrollY) / window.innerHeight <= 2){
+    else if((char.y+window.scrollY) / sectionHeights[0] > 1 && (char.y+window.scrollY) / (sectionHeights[1]+sectionHeights[0]) <= 1){
         ctx.fillStyle = `rgba(${colors[1]}, ${opacity})`;
         ctx.fillText(String.fromCodePoint(char.char[1]), char.x, char.y);
     }
@@ -164,7 +183,7 @@ async function githubData(url){
         // console.log(json)
 
         
-        let wrapper = document.createElement("div");
+        let wrapper = document.createElement("span");
         wrapper.setAttribute("id","wrapper");
         github.appendChild(wrapper);
 
@@ -181,6 +200,10 @@ async function githubData(url){
             name.innerHTML = project.name;
             let lang = document.createElement("h4");
             lang.innerHTML = project.language;
+            if(project.language in lang_colors){
+                lang.style.color = lang_colors[project.language];
+            }
+            else lang.style.color = "rgb(153,94,255)";
             let desc = document.createElement("p");
             desc.innerHTML = project.description;
 

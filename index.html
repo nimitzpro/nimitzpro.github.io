@@ -41,7 +41,7 @@
             align-items: center;
         }
         section{
-            height: 100vh;
+            min-height: 100vh;
         }
         #wrapper{
             display:flex;
@@ -74,14 +74,27 @@
         }
         #title{
             margin:0.5em 3em;
-            padding:0.25em 1em;
+            padding:0.5em 0.5em;
             width:fit-content;
-            border-radius: 0.5em 0.5em;
+            border-radius: 0.5em 0.75em;
             border: 1px solid white;
-            display:flex;
+            display:inline-flex;
             justify-content: flex-start;
             align-items: center;
             background-color:black;
+        }
+        #github div:hover{
+            animation: 0.25s 1 forwards hover;
+        }
+        @keyframes hover{
+            from{
+                background-color:black;
+                color:white;
+            }
+            to{
+                background-color:rgb(40,40,40);
+                /* color:blue; */
+            }
         }
     </style>
 </head>
