@@ -149,7 +149,7 @@ async function githubData(url){
         name.innerHTML = json.name;
         profile.src = json.avatar_url;
         let link = document.createElement("a");
-        link.setAttribute("href", json.url);
+        link.setAttribute("href", json.html_url);
         github.appendChild(link);
         let header = document.createElement("div");
         header.setAttribute("id","title");
