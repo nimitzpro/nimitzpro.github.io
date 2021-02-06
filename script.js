@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', init);
 
 let music_symbols = [[119070, 119073, 119074, 119099, 119100, 119101, 119102], [119103, 119133, 119134, 119135, 119136, 119137]]; // [9837, 9838, 9839]
 
-let colors = ["0,255,0","127,127,255","255,255,255"];
+let colors = ["0,255,0","127,127,255","200,200,200"];
 
 let lang_colors = {"JavaScript":"yellow", "Python":"blue", "Go":"lightblue", "Shell":"lightgreen", "HTML":"red", "Java":"orange", "Dart": "green"};
 
@@ -143,14 +143,14 @@ function textEffect(){
     }
 }
 
-let heading = "welcome";
+let heading = "welcome to nimitzpro's site";
 let i = 0;
 
 function typing(){
     if(i < heading.length){
         h1.innerHTML += heading.charAt(i);
         i++;
-        setTimeout(typing, 100);
+        setTimeout(typing, 50);
     }
     else{
         // h1.innerHTML += "&#8199;";
@@ -159,7 +159,7 @@ function typing(){
 }
 
 async function githubData(url){
-    let github = document.querySelector('#github');
+    let coding = document.querySelector('#coding');
     let res = await fetch(url);
     if(res.ok){
         let profile = document.createElement("img");
@@ -169,7 +169,7 @@ async function githubData(url){
         profile.src = json.avatar_url;
         let link = document.createElement("a");
         link.setAttribute("href", json.html_url);
-        github.appendChild(link);
+        coding.appendChild(link);
         let header = document.createElement("div");
         header.setAttribute("id","title");
         link.appendChild(header);
@@ -185,7 +185,7 @@ async function githubData(url){
         
         let wrapper = document.createElement("span");
         wrapper.setAttribute("id","wrapper");
-        github.appendChild(wrapper);
+        coding.appendChild(wrapper);
 
         for(let project of json){
             // root.appendChild(card);
