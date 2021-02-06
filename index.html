@@ -9,6 +9,7 @@
             margin:0 0;
             padding:0 0;
             font-family:Verdana, Geneva, Tahoma, sans-serif;
+            scroll-behavior: smooth;
         }
         body{
             font-size:16px;
@@ -33,12 +34,18 @@
         header{
             width:fit-content;
             height: 100vh;
-            margin:0 auto;
+            width:100%;
+            /* margin:0 auto; */
             /* background-color: #fff; */
             display:flex;
             flex-wrap:wrap;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
+        }
+        header img{
+            height: 3em;
+            display: inline-block;
         }
         section{
             min-height: 100vh;
@@ -73,7 +80,7 @@
             display: inline-block;
         }
         #title{
-            margin:0.5em 3em;
+            margin:1em 3em;
             padding:0.5em 0.5em;
             width:fit-content;
             border-radius: 0.5em 0.75em;
@@ -83,36 +90,74 @@
             align-items: center;
             background-color:black;
         }
-        #github div:hover{
-            animation: 0.25s 1 forwards hover;
+        #github div{
+            background-color:black;
+            color:white;
+            transition: all 0.25s ease;
         }
-        @keyframes hover{
-            from{
-                background-color:black;
-                color:white;
+        #github div:hover{
+            background-color:rgb(40,40,40);
+            transform: scale(1.1);
+        }
+        #wrapper iframe{
+            display: inline-block;
+            width: 40%;
+            margin: 1em;
+        }
+        @media only screen and (max-width: 900px) {
+            #wrapper iframe{
+                width: 90%;
+                margin: 1em auto;
             }
-            to{
-                background-color:rgb(40,40,40);
-                /* color:blue; */
+            #title{
+                margin: 0 auto;
             }
+        }
+        footer{
+            background-color: rgb(0,0,80);
+            padding: 1em;
+            border-bottom: none !important;
+        }
+        footer h4{
+            /* display:inline-block; */
+            text-align: center;
+            color: white;
+        }
+        main > *{
+            border-bottom:1px solid white;
+        }
+        #music{
+            display: block;
         }
     </style>
 </head>
 <body>
     <canvas id="textcanvas" height="100" width="100"></canvas>
-    <!-- <canvas id="codecanvas" height="100" width="100"></canvas>
-    <canvas id="musiccanvas" height="100" width="100"></canvas> -->
     <main>
         <header>
-            <h1 id="header"></h1>
+            <h1 id="header">
+            </h1>
+            <a href="#github"><img src="assets/chevron.svg" /></a>
         </header>
-        <hr />
         <section id="github">
         </section>
-        <hr />
-        <section>
-            <!-- <div id="github">More things</div> -->
+        <section id="music">
+            <h2 id="title">Music</h2>
+            <div id="wrapper">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed?
+            listType=playlist
+            &list=PLwrHq7W6HU6zf4ln0Uas16eukd7quzJe_" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed?
+            listType=playlist
+            &list=PLQCYQIoIU-HTmJhJfRbJVRrT7lb6DcV6r" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed?
+            listType=playlist
+            &list=PLQCYQIoIU-HSXxd6GCdSY4LEGQ_LjXZem" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
         </section>
+        <footer>
+            <h4>Alexander Stradnic 2021</h4>
+        </footer>
     </main>
     <script src="script.js"></script>
 </body>

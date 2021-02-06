@@ -4,7 +4,7 @@ let music_symbols = [[119070, 119073, 119074, 119099, 119100, 119101, 119102], [
 
 let colors = ["0,255,0","127,127,255","255,255,255"];
 
-let lang_colors = {"JavaScript":"yellow", "Python":"blue", "Go":"lightblue", "Shell":"lightgreen", "HTML":"red", "Java":"orange"};
+let lang_colors = {"JavaScript":"yellow", "Python":"blue", "Go":"lightblue", "Shell":"lightgreen", "HTML":"red", "Java":"orange", "Dart": "green"};
 
 let canvas = document.querySelector("canvas");
 let ctx;
@@ -112,7 +112,7 @@ function handleChar(char, large){
 
     if(char.y > canvas.height){
         char.x = 0 + Math.random() * canvas.width;
-        char.y = 0 - Math.random() * canvas.height;
+        char.y = 0;
     }
     char.y++;
     
