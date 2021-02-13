@@ -114,7 +114,7 @@ function handleChar(char, large){
         char.x = 0 + Math.random() * canvas.width;
         char.y = 0;
     }
-    char.y++;
+    large ? char.y++ : char.y += 0.5;
     
     if(char.timeSinceChange <= 0){
         char.char = genSymbols();
