@@ -171,7 +171,7 @@ async function githubData(url){
         link.setAttribute("href", json.html_url);
         coding.appendChild(link);
         let header = document.createElement("div");
-        header.setAttribute("id","title");
+        header.setAttribute("class","title");
         link.appendChild(header);
         header.appendChild(profile);    
         header.appendChild(name);    
@@ -184,7 +184,7 @@ async function githubData(url){
 
         
         let wrapper = document.createElement("span");
-        wrapper.setAttribute("id","wrapper");
+        wrapper.setAttribute("class","wrapper");
         coding.appendChild(wrapper);
 
         for(let project of json){

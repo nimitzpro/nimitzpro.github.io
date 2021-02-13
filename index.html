@@ -50,13 +50,13 @@
         section{
             min-height: 100vh;
         }
-        #wrapper{
+        .wrapper{
             display:flex;
             flex-wrap: wrap;
             justify-content: flex-start;
             align-items: center;
         }
-        #wrapper div{
+        .wrapper div{
             word-break: normal;
             border: 1px solid white;
             border-radius: 1em 1em;
@@ -66,7 +66,7 @@
             height: 10em;
             background-color: black;
         }
-        #coding a{
+        a{
             text-decoration: none;
             color: white;
         }
@@ -79,7 +79,8 @@
         #coding h2{
             display: inline-block;
         }
-        #title{
+        .title{
+            cursor: pointer;
             margin:1em 3em;
             padding:0.5em 0.5em;
             width:fit-content;
@@ -89,6 +90,11 @@
             justify-content: flex-start;
             align-items: center;
             background-color:black;
+            transition: all 0.25s ease;
+        }
+        .title:hover{
+            background-color:rgb(40,40,40);
+            transform: scale(1.1);
         }
         #coding div{
             background-color:black;
@@ -99,13 +105,13 @@
             background-color:rgb(40,40,40);
             transform: scale(1.1);
         }
-        #wrapper iframe{
+        .wrapper iframe{
             display: inline-block;
             width: 40%;
             margin: 1em;
         }
         @media only screen and (max-width: 900px) {
-            #wrapper iframe{
+            .wrapper iframe{
                 width: 90%;
                 margin: 1em auto;
             }
@@ -126,6 +132,18 @@
         #music{
             display: block;
         }
+        #down:hover #active{
+            display: inline-block;
+        }
+        #down:hover #default{
+            display: none;
+        }
+        #down #default{
+            display:inline-block;
+        }
+        #down #active{
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -134,19 +152,22 @@
         <header>
             <h1 id="header">
             </h1>
-            <a href="#coding"><img src="assets/chevron.svg" /></a>
+            <a href="#coding"><span id="down"><img id="default" src="assets/chevron.svg" /><img id="active" src="assets/chevron2.svg" /></span></a>
         </header>
         <section id="coding">
         </section>
         <section id="music">
-            <h2 id="title">Music</h2>
-            <div id="wrapper">
+            <a href="https://www.youtube.com/channel/UCZlH6dDCDiMJCtd6x0mufeA"><h2 class="title">Music</h2></a>
+            <div class="wrapper">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed?
             listType=playlist
             &list=PLwrHq7W6HU6y_KFerSHeprYMtra4wLI6J" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             <iframe width="560" height="315" src="https://www.youtube.com/embed?
             listType=playlist
             &list=PLwrHq7W6HU6zf4ln0Uas16eukd7quzJe_" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <h2 class="title">Anime Music</h2>
+            <div class="wrapper">
             <iframe width="560" height="315" src="https://www.youtube.com/embed?
             listType=playlist
             &list=PLQCYQIoIU-HTmJhJfRbJVRrT7lb6DcV6r" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
