@@ -1,1 +1,7 @@
 # My new webpage, in development
+
+
+## Todo
+- Fix resizing
+- Lower kana gen rate on first section
+- Invalid char codes on first section
