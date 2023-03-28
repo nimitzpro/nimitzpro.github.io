@@ -6,6 +6,9 @@
     <title>nimitzpro's site</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="shortcut icon" href="assets/picon.png" />
+    <script>
+        document.getElementById("year").innerHTML = new Date().getFullYear();
+    </script>
 </head>
 <body>
     <canvas id="textcanvas" height="100" width="100"></canvas>
@@ -38,7 +41,7 @@
             </div>
         </section>
         <footer>
-            <h4>Alexander Stradnic 2022</h4>
+            <h4>Alexander Stradnic <span id="year"></span></h4>
         </footer>
     </main>
     <script src="script.js"></script>
